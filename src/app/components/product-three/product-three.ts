@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ProductsService } from '../../services/products-service';
 
 @Component({
   imports: [],
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './product-three.scss',
   templateUrl: './product-three.html',
 })
-export class ProductThree {}
+export class ProductThree implements OnInit {
+  private _productsService = inject(ProductsService)
+  product:any = []
+  ngOnInit(): void {
+    this.product = this._productsService.getProductById(3)
+  }
+ 
+}

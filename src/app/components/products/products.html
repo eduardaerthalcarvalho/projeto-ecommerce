@@ -12,42 +12,81 @@
             </h2>
         </div>
 
-        <!-- Grid de Produtos -->
+        <!-- Grid de Produtos Estáticos -->
         <div class="products-grid">
-            @for (item of productsList; track item.id) {
-            <div class="product-card" [class.out-of-stock]="item.stock === 0">
 
-                <!-- Badge de Estoque -->
-                <div class="stock-badge" [class.in-stock]="item.stock > 0" [class.no-stock]="item.stock === 0">
-                    @if (item.stock > 0) {
+            <!-- Produto 1 -->
+            <div class="product-card">
+                <div class="stock-badge in-stock">
                     <span>In Stock</span>
-                    } @else {
-                    <span>Sold Out</span>
-                    }
                 </div>
-
-                <!-- Imagem do Produto -->
                 <div class="product-image-container">
-                    <img [src]="item.image" [alt]="item.name" class="product-image" />
+                    <img src="https://images.footballfanatics.com/formula-1-merchandise/formula-1-x-disney-monza-2026-cars-francesco-bernoulli-t-shirt-ivory-unisex_ss5_p-204169245+pv-1+u-ldxdusnxaixyyt8fjlc8+v-32r0obk9q52yrjd7hjht.jpg?_hv=2&w=1018" alt="Formula 1 X Disney Monza 2026 Cars Francesco Bernoulli T-Shirt - Ivory - Unisex" class="product-image" />
                 </div>
-
-                <!-- Conteúdo: Título Centralizado + Botão -->
                 <div class="product-info">
-                    <h3 class="product-name">{{ item.name }}</h3>
-
+                    <h3 class="product-name">Formula 1 X Disney Monza 2026 Cars Francesco Bernoulli T-Shirt - Ivory - Unisex</h3>
                     <div class="product-footer">
-                        <button class="btn-details">
+                        <a routerLink="/product-one" class="btn-details">
                             <span>View Details</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
+            </div>
 
+            <!-- Produto 2 -->
+            <div class="product-card">
+                <div class="stock-badge in-stock">
+                    <span>In Stock</span>
+                </div>
+                <div class="product-image-container">
+                    <img src="https://images.footballfanatics.com/formula-1-merchandise/formula-1-x-disney-fuel-racing-jacket-green-unisex_ss5_p-203969046+pv-1+u-uxqmpkxxr6kmowehfcgx+v-0lamboxmj0qvfinhlbbs.jpg?_hv=2&w=1018" alt="Formula 1 X Disney Fuel Racing Jacket - Green - Unisex" class="product-image" />
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Formula 1 X Disney Fuel Racing Jacket - Green - Unisex</h3>
+                    <div class="product-footer">
+                        <a routerLink="/product-two" class="btn-details">
+                            <span>View Details</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            } @empty {
-            <div class="no-products">
-                <p>No products available in the pit lane.</p>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+                <div class="stock-badge in-stock">
+                    <span>In Stock</span>
+                </div>
+                <div class="product-image-container">
+                    <img src="https://images.footballfanatics.com/mclaren-f1-team/mclaren-lando-norris-team-baseball-cap-papaya-unisex_ss5_p-203337101+pv-1+u-ozo72pszvkkt3impmvlu+v-4r7dgot72xcsqoln1vpe.png?_hv=2&w=1018" alt="McLaren Lando Norris Team Baseball Cap - Papaya - Unisex" class="product-image" />
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">McLaren Lando Norris Team Baseball Cap - Papaya - Unisex</h3>
+                    <div class="product-footer">
+                        <a routerLink="/product-three" class="btn-details">
+                            <span>View Details</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            }
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+                <div class="stock-badge in-stock">
+                    <span>In Stock</span>
+                </div>
+                <div class="product-image-container">
+                    <img src="https://images.footballfanatics.com/ayrton-senna/ayrton-senna-nacional-1984-original-cap-with-cap-case_ss5_p-202461394+pv-1+u-r2gaednurjzqokmfoet4+v-galddg6vxckhbkl7gvlu.jpg?_hv=2&w=1018" alt="Ayrton Senna Nacional 1984 Original Cap with Cap Case" class="product-image" />
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ayrton Senna Nacional 1984 Original Cap with Cap Case</h3>
+                    <div class="product-footer">
+                        <a routerLink="/product-four" class="btn-details">
+                            <span>View Details</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>

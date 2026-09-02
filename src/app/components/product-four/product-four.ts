@@ -3,15 +3,15 @@ import { ProductsService } from '../../services/products-service';
 
 @Component({
   imports: [],
-  selector: 'app-product-one',
-  styleUrl: './product-one.scss',
-  templateUrl: './product-one.html',
+  selector: 'app-product-four',
+  styleUrl: './product-four.scss',
+  templateUrl: './product-four.html',
 })
-export class ProductOne implements OnInit {
+export class ProductFour implements OnInit {
   private _productsService = inject(ProductsService)
   product:any = []
   ngOnInit(): void {
-    this.product = this._productsService.getProductById(1)
+    this.product = this._productsService.getProductById(4)
   }
  
 }

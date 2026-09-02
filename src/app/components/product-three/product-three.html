@@ -1,1 +1,61 @@
-<p>product-three works!</p>
+<section class="detail-section">
+<section class="detail-section">
+  <div class="detail-container">
+    <a href="/products" class="btn-back">
+  <span>← Back to Products</span>
+</a>
+    <div class="product-detail-grid">
+      
+      <!-- Imagem do Produto -->
+      <div class="image-wrapper">
+        <div class="stock-badge" [class.in-stock]="product.stock > 0" [class.no-stock]="product.stock === 0">
+          @if (product.stock > 0) {
+            <span>In Stock ({{ product.stock }})</span>
+          } @else {
+            <span>Sold Out</span>
+          }
+        </div>
+
+        <img [src]="product.image" [alt]="product.name" class="detail-image" />
+      </div>
+
+      <!-- Informações do Produto -->
+      <div class="info-wrapper">
+        <div class="detail-badge">
+          <span class="badge-dot"></span>
+          <span>Official Licensed Item</span>
+        </div>
+
+        <h1 class="product-title">{{ product.name }}</h1>
+
+        <!-- Preço -->
+        <div class="price-box">
+          <span class="currency">$</span>
+          <span class="price-value">{{ product.price }}</span>
+        </div>
+
+        <!-- Descrição -->
+        <div class="description-box">
+          <h3>Technical Specifications & Overview</h3>
+          <p>{{ product.description }}</p>
+        </div>
+
+        <!-- Botão Estático de Comprar -->
+        <div class="purchase-controls">
+          <button 
+            class="btn-buy-now" 
+            [disabled]="product.stock === 0">
+            <span>
+              @if (product.stock > 0) {
+                Buy Now
+              } @else {
+                Out of Stock
+              }
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

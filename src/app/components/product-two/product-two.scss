@@ -1,0 +1,205 @@
+/* ==============================================
+   PRODUCT DETAIL PAGE (STATIC VERSION)
+   ============================================== */
+
+.detail-section {
+  padding: 4rem 2rem;
+  background-color: var(--f1-black);
+}
+
+.detail-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* --- IMAGEM --- */
+.image-wrapper {
+  position: relative;
+  background-color: var(--f1-carbon);
+  border: 1px solid var(--f1-border);
+  border-radius: var(--f1-radius-sm);
+  overflow: hidden;
+}
+
+.detail-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.stock-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: var(--f1-font-mono);
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.stock-badge.in-stock {
+  background-color: rgba(0, 200, 83, 0.2);
+  color: var(--f1-green);
+  border: 1px solid var(--f1-green);
+}
+
+.stock-badge.no-stock {
+  background-color: rgba(225, 6, 0, 0.2);
+  color: var(--f1-red-neon);
+  border: 1px solid var(--f1-red);
+}
+
+/* --- DETALHES --- */
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(225, 6, 0, 0.1);
+  border: 1px solid var(--f1-red);
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+  transform: skewX(var(--f1-skew-deg));
+}
+
+.detail-badge span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1));
+  font-family: var(--f1-font-mono);
+  font-size: 0.8rem;
+  color: var(--f1-red-neon);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--f1-red-neon);
+  border-radius: 50%;
+  box-shadow: var(--f1-glow-red);
+}
+
+.product-title {
+  font-family: var(--f1-font-primary);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+/* --- PREÇO --- */
+.price-box {
+  font-family: var(--f1-font-mono);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--f1-white);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--f1-border);
+}
+
+.currency {
+  color: var(--f1-red);
+  margin-right: 0.2rem;
+}
+
+/* --- DESCRIÇÃO --- */
+.description-box h3 {
+  font-family: var(--f1-font-mono);
+  font-size: 0.85rem;
+  color: var(--f1-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.description-box p {
+  font-family: var(--f1-font-primary);
+  font-size: 0.95rem;
+  color: #c3cbd8;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* --- BOTÃO COMPRAR --- */
+.btn-buy-now {
+  width: 100%;
+  background-color: var(--f1-red);
+  border: none;
+  padding: 1.1rem;
+  transform: skewX(var(--f1-skew-deg));
+  box-shadow: var(--f1-glow-red);
+  cursor: pointer;
+  transition: all var(--f1-speed-fast);
+}
+
+.btn-buy-now span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1));
+  font-family: var(--f1-font-primary);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-buy-now:hover:not(:disabled) {
+  background-color: var(--f1-red-neon);
+  transform: skewX(var(--f1-skew-deg)) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 24, 1, 0.6);
+}
+
+.btn-buy-now:disabled {
+  background-color: #33394b;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 850px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+.btn-back {
+  display: inline-block;
+  color: var(--f1-white);
+  text-decoration: none;
+  font-family: var(--f1-font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--f1-carbon);
+  border: 1px solid var(--f1-border);
+  transition: all var(--f1-speed-fast);
+}
+
+.btn-back:hover {
+  color: var(--f1-red-neon);
+  border-color: var(--f1-red);
+  box-shadow: var(--f1-glow-red);
+}

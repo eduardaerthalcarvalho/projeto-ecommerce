@@ -1,3 +1,29 @@
+:root {
+    --f1-red: #e10600;
+    --f1-red-dark: #b00400;
+    --f1-red-neon: #ff1801;
+    --f1-black: #0b0e14;
+    --f1-carbon: #151922;
+    --f1-carbon-light: #1e2330;
+    --f1-border: #2a303f;
+    --f1-white: #ffffff;
+    --f1-text-muted: #94a3b8;
+    --f1-yellow: #ffb800; 
+    --f1-green: #00e676; 
+    --f1-cyan: #00d2be; 
+
+    /* --- Tipografia --- */
+    --f1-font-primary: 'Formula1', -apple-system, sans-serif;
+    --f1-font-mono: 'Titillium Web', 'Courier New', monospace;
+
+    /* --- Aerodinâmica & Layout --- */
+    --f1-skew-deg: -12deg; 
+    --f1-radius-sm: 2px;
+    --f1-radius-md: 6px;
+    --f1-speed-fast: 0.15s cubic-bezier(0, 0, 0.2, 1);
+    --f1-glow-red: 0 0 15px rgba(225, 6, 0, 0.5);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -34,4 +60,23 @@ ul, ol {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* ==============================================
+   LAYOUT PRINCIPAL 100VH (STICKY FOOTER)
+   ============================================== */
+
+/* 1. Define o body como um container flex de altura total */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--f1-black); /* Cor de fundo F1 */
+}
+
+/* 2. Faz o componente que vem DEPOIS do router-outlet ocupar o espaço restante */
+router-outlet + * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }

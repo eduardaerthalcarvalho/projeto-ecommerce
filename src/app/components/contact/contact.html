@@ -1,1 +1,84 @@
-<p>contact works!</p>
+<section class="contact-section">
+    <div class="contact-container">
+
+        <!-- Left Column: Contact Info & Support Cards -->
+        <div class="contact-info">
+            <div class="contact-badge">
+                <span class="badge-dot"></span>
+                <span>Pit Wall Direct Line</span>
+            </div>
+
+            <h1 class="contact-title">
+                Get in <span class="highlight">Touch</span>
+            </h1>
+
+            <p class="contact-description">
+                Need assistance with your order, shipping status, or item authenticity? Our pit crew is ready to help
+                you back on track.
+            </p>
+
+            <!-- Support Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">✉</div>
+                    <div class="info-details">
+                        <span class="info-label">Customer Support</span>
+                        <span class="info-value">support@paddockclub.com</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🏎</div>
+                    <div class="info-details">
+                        <span class="info-label">Order & Dispatch Status</span>
+                        <span class="info-value">24/7 Live Telemetry System</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <span class="info-label">HQ Location</span>
+                        <span class="info-value">Monza Tech Park, Italy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Radio Message Form -->
+        <div class="contact-form-wrapper">
+            <div class="form-header">
+                <span class="radio-status">● RADIO LINK ACTIVE</span>
+                <h2>Radio Message to Pit Crew</h2>
+            </div>
+
+            <form class="contact-form" (ngSubmit)="$event.preventDefault()">
+                <!-- Name Input -->
+                <div class="form-group">
+                    <label for="name">Driver / Customer Name</label>
+                    <input type="text" id="name" placeholder="e.g. Ayrton Senna" required />
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@domain.com" required />
+                </div>
+
+
+                <!-- Message Input -->
+                <div class="form-group">
+                    <label for="message">Transmission Message</label>
+                    <textarea id="message" rows="4" placeholder="Transmit your message to team radio..."
+                        required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">
+                    <span>Transmit Message</span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>

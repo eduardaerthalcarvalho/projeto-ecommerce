@@ -1,52 +1,87 @@
+/* ==============================================
+   HEADER COMPONENT (PADDOCK CLUB STYLE)
+   ============================================== */
+
 .app-header {
+  background-color: var(--f1-carbon);
+  border-bottom: 2px solid var(--f1-red);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  
+  /* Centralização e espaçamento */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 2rem; /* Espaçamento entre os menus e a logo */
+  
   padding: 1rem 2rem;
-  background-color: #1e293b;
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav-menu {
-  flex: 1;
-  display: flex;
-  align-items: center;
+/* --- LOGO CENTRAL --- */
+.app-header .logo {
+  background-color: var(--f1-red);
+  padding: 0.5rem 1.5rem;
+  transform: skewX(var(--f1-skew-deg)); /* Corte inclinado da F1 */
+  box-shadow: var(--f1-glow-red);
+  transition: var(--f1-speed-fast);
 }
 
+.app-header .logo:hover {
+  background-color: var(--f1-red-neon);
+  transform: skewX(var(--f1-skew-deg)) scale(1.05);
+}
+
+.app-header .logo span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1)); /* Desfaz a inclinação no texto */
+  font-family: var(--f1-font-primary);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- NAVEGAÇÃO --- */
 .nav-menu ul {
   display: flex;
   align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2rem;
-}
-
-.nav-right {
-  justify-content: flex-end;
-}
-
-.logo {
-  flex: 0 0 auto;
-  text-align: center;
-  padding: 0 1rem;
-}
-
-.logo span {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #38bdf8;
-  letter-spacing: 0.5px;
+  gap: 1.5rem; /* Espaço entre os links do mesmo lado */
 }
 
 .nav-menu a {
-  color: #94a3b8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease-in-out;
+  font-family: var(--f1-font-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--f1-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 0.25rem;
+  position: relative;
+  transition: color var(--f1-speed-fast);
 }
 
-.nav-menu a:hover {
-  color: #ffffff;
+/* Hover e estado ativo dos links */
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--f1-white);
+}
+
+/* Linha inferior de destaque estilo F1 no Hover */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--f1-red);
+  transition: width var(--f1-speed-fast);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
 }

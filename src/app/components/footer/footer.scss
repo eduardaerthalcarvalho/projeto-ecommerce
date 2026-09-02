@@ -1,19 +1,37 @@
+/* ==============================================
+   FOOTER COMPONENT (PADDOCK CLUB STYLE)
+   ============================================== */
+
 .footer-copyright {
-  width: 100%;
+  background-color: var(--f1-black);
+  border-top: 1px solid var(--f1-border);
   padding: 1.5rem 2rem;
-  background-color: #0f172a;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  
+  /* Centralização */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  
+  position: relative;
+}
+
+/* Detalhe superior vermelho no estilo F1 (linha de largada/pit lane) */
+.footer-copyright::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background-color: var(--f1-red);
+  box-shadow: var(--f1-glow-red);
 }
 
 .footer-copyright span {
-  color: #94a3b8;
-  font-size: 0.875rem;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-
-.footer-copyright span:hover {
-  color: #38bdf8;
+  font-family: var(--f1-font-mono); /* Tipografia técnica/telemetria */
+  font-size: 0.85rem;
+  color: var(--f1-text-muted);
+  letter-spacing: 1px;
 }

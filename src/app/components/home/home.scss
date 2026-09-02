@@ -1,0 +1,111 @@
+/* ==============================================
+   HOME HERO SECTION (F1 STYLE)
+   ============================================== */
+
+.hero-section {
+  /* Centralização total no viewport do router-outlet */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  
+  /* Fundo de Asfalto com Iluminação Radial Vermelha (Efeito Paddock) */
+  background: 
+    radial-gradient(circle at 50% 30%, rgba(225, 6, 0, 0.18) 0%, transparent 60%),
+    linear-gradient(180deg, var(--f1-carbon) 0%, var(--f1-black) 100%);
+  
+  border-bottom: 1px solid var(--f1-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- BADGE DE DESTAQUE --- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(225, 6, 0, 0.1);
+  border: 1px solid var(--f1-red);
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1.5rem;
+  transform: skewX(var(--f1-skew-deg));
+}
+
+.hero-badge span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1)); /* Desfaz a inclinação no texto */
+  font-family: var(--f1-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--f1-red-neon);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--f1-red-neon);
+  border-radius: 50%;
+  box-shadow: var(--f1-glow-red);
+}
+
+/* --- TÍTULO PRINCIPAL (H1) --- */
+.hero-title {
+  font-family: var(--f1-font-primary);
+  font-size: clamp(2.2rem, 5vw, 4rem); /* Responsivo automaticamente */
+  font-weight: 900;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  max-width: 800px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title .highlight {
+  color: var(--f1-red);
+  text-shadow: var(--f1-glow-red);
+}
+
+/* --- TEXTO DE APOIO --- */
+.hero-description {
+  font-family: var(--f1-font-primary);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--f1-text-muted);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* --- BOTÃO CTA --- */
+.btn-cta {
+  display: inline-block;
+  background-color: var(--f1-red);
+  padding: 1rem 2.5rem;
+  transform: skewX(var(--f1-skew-deg));
+  box-shadow: var(--f1-glow-red);
+  transition: all var(--f1-speed-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cta span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1)); /* Desfaz a inclinação no texto */
+  font-family: var(--f1-font-primary);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-cta:hover {
+  background-color: var(--f1-red-neon);
+  transform: skewX(var(--f1-skew-deg)) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 24, 1, 0.7);
+}

@@ -1,0 +1,190 @@
+/* ==============================================
+   PRODUCTS CATALOG (MINIMAL CARDS)
+   ============================================== */
+
+.products-section {
+  padding: 4rem 2rem;
+  background-color: var(--f1-black);
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- HEADER --- */
+.products-header {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.products-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(225, 6, 0, 0.1);
+  border: 1px solid var(--f1-red);
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1rem;
+  transform: skewX(var(--f1-skew-deg));
+}
+
+.products-badge span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1));
+  font-family: var(--f1-font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--f1-red-neon);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--f1-red-neon);
+  border-radius: 50%;
+  box-shadow: var(--f1-glow-red);
+}
+
+.products-title {
+  font-family: var(--f1-font-primary);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--f1-white);
+  text-transform: uppercase;
+}
+
+.products-title .highlight {
+  color: var(--f1-red);
+  text-shadow: var(--f1-glow-red);
+}
+
+/* --- GRID --- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* --- PRODUCT CARD --- */
+.product-card {
+  position: relative;
+  background-color: var(--f1-carbon);
+  border: 1px solid var(--f1-border);
+  border-radius: var(--f1-radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--f1-speed-fast), border-color var(--f1-speed-fast), box-shadow var(--f1-speed-fast);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--f1-red);
+  box-shadow: 0 10px 25px rgba(225, 6, 0, 0.15);
+}
+
+.product-card.out-of-stock {
+  opacity: 0.7;
+}
+
+/* --- STOCK BADGE --- */
+.stock-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  font-family: var(--f1-font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.stock-badge.in-stock {
+  background-color: rgba(0, 200, 83, 0.2);
+  color: var(--f1-green);
+  border: 1px solid var(--f1-green);
+}
+
+.stock-badge.no-stock {
+  background-color: rgba(225, 6, 0, 0.2);
+  color: var(--f1-red-neon);
+  border: 1px solid var(--f1-red);
+}
+
+/* --- IMAGE --- */
+.product-image-container {
+  width: 100%;
+  height: 220px;
+  background-color: #0d1017;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--f1-speed-fast);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* --- INFO & CONTENT --- */
+.product-info {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  flex: 1;
+}
+
+.product-name {
+  font-family: var(--f1-font-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--f1-white);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+/* --- FOOTER & BUTTON --- */
+.product-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto; /* Garante que o botão fique na parte inferior */
+}
+
+.btn-details {
+  width: 100%;
+  background-color: var(--f1-red);
+  border: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transform: skewX(var(--f1-skew-deg));
+  transition: all var(--f1-speed-fast);
+}
+
+.btn-details span {
+  display: inline-block;
+  transform: skewX(calc(var(--f1-skew-deg) * -1));
+  font-family: var(--f1-font-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--f1-white);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.btn-details:hover {
+  background-color: var(--f1-red-neon);
+  box-shadow: var(--f1-glow-red);
+}

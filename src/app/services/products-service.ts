@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface IProducts {
+export interface IProduct {
   id: number;
   name: string;
   image: string;
@@ -12,8 +12,9 @@ interface IProducts {
 @Injectable({
   providedIn: 'root',
 })
-export class Products {
-    private products: IProducts[] = [
+
+export class ProductsService {
+    private products: IProduct[] = [
         {
             id: 1,
             name: "Formula 1 X Disney Monza 2026 Cars Francesco Bernoulli T-Shirt - Ivory - Unisex", 
@@ -27,7 +28,7 @@ export class Products {
             id: 2,
             name: "Formula 1 X Disney Fuel Racing Jacket - Green - Unisex", 
             image: "https://images.footballfanatics.com/formula-1-merchandise/formula-1-x-disney-fuel-racing-jacket-green-unisex_ss5_p-203969046+pv-1+u-uxqmpkxxr6kmowehfcgx+v-0lamboxmj0qvfinhlbbs.jpg?_hv=2&w=1018", 
-            description: "For the ultimate F1 look this jacket is an absolute must-have. The ideal outerwear for any fan whether you're trackside or anywhere else.",
+            description: "Elevate your race weekend style with the ultimate official F1 team jacket. Built for fans who demand both performance and iconic aesthetic, this outerwear piece keeps you comfortable whether you're trackside in person or watching the Grand Prix from afar. Show off your team pride with unmistakable details designed for true motorsport purists.",
             price: 168.00,
             stock: 1000
         }

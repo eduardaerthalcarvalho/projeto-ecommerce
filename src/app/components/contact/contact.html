@@ -48,15 +48,14 @@
         <!-- Right Column: Radio Message Form -->
         <div class="contact-form-wrapper">
             <div class="form-header">
-                <span class="radio-status">● RADIO LINK ACTIVE</span>
                 <h2>Radio Message to Pit Crew</h2>
             </div>
 
             <form class="contact-form" (ngSubmit)="$event.preventDefault()">
                 <!-- Name Input -->
                 <div class="form-group">
-                    <label for="name">Driver / Customer Name</label>
-                    <input type="text" id="name" placeholder="e.g. Ayrton Senna" required />
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name here..." required />
                 </div>
 
                 <!-- Email Input -->
@@ -68,9 +67,8 @@
 
                 <!-- Message Input -->
                 <div class="form-group">
-                    <label for="message">Transmission Message</label>
-                    <textarea id="message" rows="4" placeholder="Transmit your message to team radio..."
-                        required></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" placeholder="Enter your message here..." required></textarea>
                 </div>
 
                 <!-- Submit Button -->

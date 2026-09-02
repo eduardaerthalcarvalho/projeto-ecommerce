@@ -33,7 +33,7 @@
   transform: skewX(var(--f1-skew-deg)) scale(1.05);
 }
 
-.app-header .logo span {
+.app-header .logo a {
   display: inline-block;
   transform: skewX(calc(var(--f1-skew-deg) * -1)); /* Desfaz a inclinação no texto */
   font-family: var(--f1-font-primary);

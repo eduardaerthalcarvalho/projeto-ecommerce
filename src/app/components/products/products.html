@@ -1,1 +1,54 @@
-<p>products works!</p>
+<section class="products-section">
+    <div class="products-container">
+
+        <!-- Header da Seção -->
+        <div class="products-header">
+            <div class="products-badge">
+                <span class="badge-dot"></span>
+                <span>Grid Supplies</span>
+            </div>
+            <h2 class="products-title">
+                Official <span class="highlight">Gear & Merchandise</span>
+            </h2>
+        </div>
+
+        <!-- Grid de Produtos -->
+        <div class="products-grid">
+            @for (item of productsList; track item.id) {
+            <div class="product-card" [class.out-of-stock]="item.stock === 0">
+
+                <!-- Badge de Estoque -->
+                <div class="stock-badge" [class.in-stock]="item.stock > 0" [class.no-stock]="item.stock === 0">
+                    @if (item.stock > 0) {
+                    <span>In Stock</span>
+                    } @else {
+                    <span>Sold Out</span>
+                    }
+                </div>
+
+                <!-- Imagem do Produto -->
+                <div class="product-image-container">
+                    <img [src]="item.image" [alt]="item.name" class="product-image" />
+                </div>
+
+                <!-- Conteúdo: Título Centralizado + Botão -->
+                <div class="product-info">
+                    <h3 class="product-name">{{ item.name }}</h3>
+
+                    <div class="product-footer">
+                        <button class="btn-details">
+                            <span>View Details</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            } @empty {
+            <div class="no-products">
+                <p>No products available in the pit lane.</p>
+            </div>
+            }
+        </div>
+
+    </div>
+</section>
